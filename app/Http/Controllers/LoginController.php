@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-include('config.php');
-session_start();
-
 class LoginController extends Controller
 {
     public function ShowForm(){
@@ -14,10 +11,11 @@ class LoginController extends Controller
     }
 
 
-    public function ComprobarLogin(){
-        
- 
+    public function ComprobarLogin(Request $req){
+        $email=$req->input('email');
+        $password=$req->input('password');
 
+        redirect("home");
         
     }
 }
