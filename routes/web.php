@@ -17,6 +17,8 @@ Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
 
+Route::post('acceso','LoginController@ComprobarLogin')->name('acceso');
+
 
 /*Route::get('/', function () {
     return view('welcome');

@@ -18,7 +18,7 @@
                 <p>
                     Es necesario tener una cuenta y acceder a ella para poder realizar pedidos, controlar el progreso del mismo, consultar pedidos anteriores... Si ya la tienes inicia sesión, si no regístrate y disfruta de nuestras ventajas.
                 </p>
-                <form method="GET" action="login">
+                <form method="POST" action="{{ route('acceso') }}">
                     <ul>
                         <li>
                             <input type="text" name="email" placeholder="Email" />
