@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
 
 Route::post('acceso','LoginController@ComprobarLogin')->name('acceso');
+Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
 
 
 /*Route::get('/', function () {
