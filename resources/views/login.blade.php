@@ -30,6 +30,7 @@
                             <input type="submit" name="login" value="login" class="button" />
                         </li>
                     </ul>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">        
                 </form>
             </div>
             <!--/#login.form-action-->
