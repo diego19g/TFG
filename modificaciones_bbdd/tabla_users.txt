@@ -1,4 +1,4 @@
-CREATE TABLE login.users(
+CREATE TABLE restaurante.users(
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(25) NOT NULL,
   `apellido` varchar(25) NOT NULL,
