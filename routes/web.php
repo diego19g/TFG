@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
 
-Route::post('acceso','LoginController@ComprobarLogin')->name('acceso');
+Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
 
 

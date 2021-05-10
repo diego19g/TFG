@@ -15,7 +15,7 @@ class LoginController extends Controller
         $email=$req->input('email');
         $password=$req->input('password');
 
-        redirect("home");
+        return redirect("/");
         
     }
 }
