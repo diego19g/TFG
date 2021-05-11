@@ -19,7 +19,7 @@ class LoginController extends Controller
         $checkLogin=DB::table('users')->where(['email'=>$email,'password'=>$password])->get();
 
         if(count($checkLogin) >0){
-            echo "Login successfull";
+            echo "Login successfull ";
 
             print_r($req->input());
         }else{
