@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
-    public function RegistrarUsuario(){
+    public function RegistrarUsuario(Request $request){
+        $user=new User();
+
+        $user->name=$request->nombre;
+        $user->surname=$request->apellido;
+        $user->email=$request->email;
+        $user->password=$request->password;
+
+        $user->save();
 
     }
 }
