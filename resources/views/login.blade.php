@@ -59,9 +59,6 @@
                         </li>
                     </ul>
                 </form>
-                @if ( session('mensaje') )
-                    <div>{{ session('mensaje') }}</div>
-                @endif
             </div>
             <!--/#register.form-action-->
         </div>
