@@ -22,7 +22,7 @@ Route::view('home_cliente', 'home_cliente')->name('home_cliente');
 
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
-Route::post('nombre',[LoginController::class,'CogerNombre'])->name('nombre');
+Route::get('nombre',[LoginController::class,'CogerNombre']);
 
 
 /*Route::get('/', function () {
