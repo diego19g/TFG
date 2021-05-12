@@ -19,9 +19,7 @@ class LoginController extends Controller
         $checkLogin=DB::table('users')->where(['email'=>$email,'password'=>$password])->get();
 
         if(count($checkLogin) >0){
-            echo "Login successfull ";
-
-            print_r($req->input());
+            return redirect(route('home_cliente'));
         }else{
             echo 'Login failed';
         }

@@ -43,3 +43,10 @@ body {
 button a:hover{
   color: white;
 }
+
+.home_cliente{
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  top: 35%;
+}
