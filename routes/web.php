@@ -18,11 +18,10 @@ use App\Http\Controllers\LoginController;
 Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
-Route::view('home_cliente', 'home_cliente')->name('home_cliente');
 
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
-Route::get('nombre',[LoginController::class,'CogerNombre']);
+Route::get('home_cliente', [LoginController::class,'CogerNombre'])->name('home_cliente');
 
 
 /*Route::get('/', function () {
