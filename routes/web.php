@@ -18,6 +18,8 @@ use App\Http\Controllers\LoginController;
 Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
+Route::view('carta_cliente', 'cliente.carta_cliente')->name('carta_cliente');
+Route::view('pedidos_cliente', 'cliente.pedidos_cliente')->name('pedidos_cliente');
 
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');

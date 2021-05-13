@@ -44,9 +44,28 @@ button a:hover{
   color: white;
 }
 
-.home_cliente{
-  margin: auto;
+.home_cliente{  
   text-align: center;
   position: absolute;
   top: 35%;
+  left: 40%;
+}
+
+.cerrar_sesion{
+  position: absolute;
+  left: 85%;
+}
+
+.centrado{
+  position: absolute;
+  left: 42%;
+}
+
+.texto_carta{
+  position: relative;
+  left: 20%;
+}
+
+.flotante{
+  float: left;
 }

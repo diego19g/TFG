@@ -31,7 +31,7 @@ class LoginController extends Controller
         $sql = "SELECT name FROM users WHERE email=?";
         $nombre=DB::statement($sql,array($e));
         //$nombre=DB::select('SELECT name FROM users WHERE email="'.$e.'"');
-        return view('home_cliente')->with('nombre',$nombre);
+        return view('cliente.home_cliente')->with('nombre',$nombre);
         
     }
 }
