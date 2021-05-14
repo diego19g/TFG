@@ -28,5 +28,11 @@ function cambiar_boton(id,id2,id3){
   var atributo3 = document.createAttribute("style");
   atributo3.value = "background-color:black;padding:5px;margin:5px;";
   boton3.setAttributeNode(atributo3);
+
+  var titulo = document.getElementById("titulo_carta");
+
+  if(id=="carta_1"){
+    titulo.innerHTML="ENTRANTES";
+  }
 }
   
