@@ -34,5 +34,11 @@ function cambiar_boton(id,id2,id3){
   if(id=="carta_1"){
     titulo.innerHTML="ENTRANTES";
   }
+  if(id=="carta_2"){
+    titulo.innerHTML="BURRITOS Y HAMBURGUESAS";
+  }
+  if(id=="carta_3"){
+    titulo.innerHTML="BEBIDAS";
+  }
 }
   
