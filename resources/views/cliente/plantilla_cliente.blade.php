@@ -62,19 +62,19 @@
       <li class="nav-item">
         <a href="{{ route('home_cliente') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-          Home
+          Inicio
         </a>
       </li>
       <li>
         <a href="{{ route('carta_cliente') }}" class="nav-link " style="color:black;">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-          Dashboard
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          Carta
         </a>
       </li>
       <li>
         <a href="{{ route('pedidos_cliente') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-          Orders
+          Pedidos
         </a>
       </li>
       <li>
@@ -84,13 +84,14 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link" style="color:black;">
+        <a href="{{ route('cuenta') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-          Customers
+          Mi cuenta
         </a>
       </li>
     </ul>
     <hr>
+    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('compra') }}">Pedido actual</a></p>
   </div>
     </section>
 
