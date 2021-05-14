@@ -11,6 +11,7 @@
   <link href="css/menu_pc.css" rel="stylesheet">
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/menu_pc.js"></script>
+  @yield('link')
 </head>
 <body>
 <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
