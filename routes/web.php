@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DatosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
 Route::get('home_cliente',[LoginController::class,'CogerNombre'])->name('home_cliente');
 Route::get('cuenta', [DatosController::class,'index'])->name('cuenta');
+Route::put('modificar_datos/{user}', [DatosController::class,'ModificarDatos'])->name('modificar_datos');
 
 
 

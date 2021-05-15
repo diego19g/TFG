@@ -9,30 +9,34 @@
     </div>
 
         <div>
-            <div>
+         <form action="{{ route('modificar_datos',$user) }}" method="POST">
+             @method('PUT')
+             @csrf
+            <div>            
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" class="form-control" placeholder="Nombre"   aria-label="Nombre" aria-describedby="basic-addon1">{{ $datos->name }}
+                    <input type="text" name="nombre" class="form-control" value="{{ $user->name }}" placeholder="{{ $datos->name }}" aria-label="Nombre" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
-                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="basic-addon1">
+                    <input type="text" name="apellido" class="form-control" value="{{ $user->surname }}" placeholder="{{ $datos->surname }}" aria-label="Apellido" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Email</span>
-                    <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                    <input type="text" name="email" class="form-control" value="{{ $user->email }}" placeholder="{{ $datos->email }}" aria-label="Email" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input type="text" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                    <input type="text" name="password" class="form-control" value="{{ $user->password }}" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Confirmar contraseña</span>
-                    <input type="text" class="form-control" placeholder="Confirmar contraseña" aria-label="Confirmar contraseña" aria-describedby="basic-addon1">
+                    <input type="text" name="password2" class="form-control" placeholder="Confirmar contraseña" aria-label="Confirmar contraseña" aria-describedby="basic-addon1">
                 </div>
             </div>
+            <input type="submit" name="modificar" value="Actualizar datos" class="btn btn-lg btn-home" />
+            </form>
     </div>
-    <a href="#" class="btn btn-home btn-lg">Actualizar datos</a>
 </section>
 
 
