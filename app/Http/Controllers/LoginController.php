@@ -36,7 +36,6 @@ class LoginController extends Controller
     public function CogerNombre(){           
         $e = session('email');  
         $nombre=DB::table('users')->where(['email'=>$e])->first();
-        //$nombre=DB::select('SELECT name FROM users WHERE email="'.$e.'"');
         return view('cliente.home_cliente')->with('nombre',$nombre->name);
         
     }

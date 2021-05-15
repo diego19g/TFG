@@ -69,3 +69,9 @@ button a:hover{
 .flotante{
   float: left;
 }
+
+.texto_cuenta{
+  text-align: center;
+  position: absolute;
+  left: 30%;
+}
