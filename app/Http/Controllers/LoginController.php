@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {       
@@ -16,22 +17,27 @@ class LoginController extends Controller
         $email=$req->input('email');
         $password=$req->input('password');
 
-        $checkLogin=DB::table('users')->where(['email'=>$email,'password'=>$password])->get();
+        $checkLogin=DB::table('users')->where(['email'=>$email])->get();
 
-        if(count($checkLogin) >0){    
-            session(['email' => $email]);
-            return redirect(route('home_cliente'));
+        if(count($checkLogin) >0){ 
+            $hash=DB::table('users')->where(['email'=>$email])->first();            
+            if(Hash::check($password,$hash->password)){
+                session(['email' => $email]);
+                return redirect(route('home_cliente'));
+            }   else{
+                echo "'Login failed'";
+            }
+
         }else{
             echo 'Login failed';
         }
         
     }
     public function CogerNombre(){           
-        $e = session('email');
-        $sql = "SELECT name FROM users WHERE email=?";
-        $nombre=DB::statement($sql,array($e));
+        $e = session('email');  
+        $nombre=DB::table('users')->where(['email'=>$e])->first();
         //$nombre=DB::select('SELECT name FROM users WHERE email="'.$e.'"');
-        return view('cliente.home_cliente')->with('nombre',$nombre);
+        return view('cliente.home_cliente')->with('nombre',$nombre->name);
         
     }
 }

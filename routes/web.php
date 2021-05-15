@@ -18,6 +18,7 @@ use App\Http\Controllers\LoginController;
 Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
+//Route::view('home_cliente', 'cliente.home_cliente')->name('home_cliente');
 Route::view('carta_cliente', 'cliente.carta_cliente')->name('carta_cliente');
 Route::view('pedidos_cliente', 'cliente.pedidos_cliente')->name('pedidos_cliente');
 Route::view('pedido_actual', 'cliente.compra_actual')->name('compra');
@@ -25,10 +26,9 @@ Route::view('mi_cuenta', 'cliente.cuenta')->name('cuenta');
 
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
+Route::get('home_cliente',[LoginController::class,'CogerNombre'])->name('home_cliente');
 
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-
-Route::get('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
