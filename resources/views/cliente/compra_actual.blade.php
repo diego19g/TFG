@@ -1,1 +1,0 @@
-@extends('cliente.plantilla_cliente')

@@ -16,13 +16,13 @@
 <body>
 <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
   <div>
-    <a href="{{ route('home') }}" class="d-flex align-items-center text-dark text-decoration-none">    
+    <a href="{{ route('shop') }}" class="d-flex align-items-center text-dark text-decoration-none">    
       <img src="images/logo.png" width="100px" height="100px">
       <span class="fs-4">FOOD GO!</span>
     </a>
   </div>
   <div class="cerrar_sesion">
-    <a class="btn btn-sm btn-outline-secondary" href="{{ route('home') }}">CERRAR SESIÓN</a>
+    <a class="btn btn-sm btn-outline-secondary" href="{{ route('shop') }}">CERRAR SESIÓN</a>
   </div>
     
   </header>
@@ -66,7 +66,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('carta_cliente') }}" class="nav-link " style="color:black;">
+        <a href="{{ route('shop') }}" class="nav-link " style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           Carta
         </a>
@@ -91,7 +91,7 @@
       </li>
     </ul>
     <hr>
-    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('compra') }}">Pedido actual</a></p>
+    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('cart') }}">Pedido actual</a></p>
   </div>
     </section>
 

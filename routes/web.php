@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DatosController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,16 @@ Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('re
 Route::get('home_cliente',[LoginController::class,'CogerNombre'])->name('home_cliente');
 Route::get('cuenta', [DatosController::class,'index'])->name('cuenta');
 Route::put('modificar_datos', [DatosController::class,'ModificarDatos'])->name('modificar_datos');
+
+
+//rutas del carrito
+Route::get('/carta_cliente', [CartController::class,'shop'])->name('shop');
+Route::get('/cart', [CartController::class,'cart'])->name('cart.index');
+Route::post('/add', [CartController::class,'add'])->name('cart.store');
+Route::post('/update', [CartController::class,'update'])->name('cart.update');
+Route::post('/remove', [CartController::class,'remove'])->name('cart.remove');
+Route::post('/clear', [CartController::class,'clear'])->name('cart.clear');
+
 
 
 
