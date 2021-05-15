@@ -15,9 +15,10 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->double('price');
-            $table->integer('quantity');            
+            $table->integer('quantity');   
+            $table->string('email')->unique();         
             $table->timestamps();
         });
     }
