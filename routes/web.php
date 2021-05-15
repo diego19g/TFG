@@ -27,7 +27,7 @@ Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
 Route::get('home_cliente',[LoginController::class,'CogerNombre'])->name('home_cliente');
 Route::get('cuenta', [DatosController::class,'index'])->name('cuenta');
-Route::put('modificar_datos/{user}', [DatosController::class,'ModificarDatos'])->name('modificar_datos');
+Route::put('modificar_datos', [DatosController::class,'ModificarDatos'])->name('modificar_datos');
 
 
 

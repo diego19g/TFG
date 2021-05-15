@@ -15,10 +15,11 @@ class DatosController extends Controller
         return view('cliente.cuenta')->with('datos',$datos);  
     }
 
-    public function ModificarDatos(Request $request,User $user){
+    public function ModificarDatos(Request $request){
+        $user=User::find($request->email);
 
         if($request->password != $request->password2){
-            return view('cliente.cuenta')->with('datos',$datos)->with('mensaje', 'La contraseña no coincide!');  
+            return back()->with('mensaje', 'La contraseña no coincide!');  
         }else{
             $user->name = $request->nombre;
             $user->surname = $request->apellido;
@@ -26,7 +27,7 @@ class DatosController extends Controller
             $user->password=Hash::make($request->password);
             $user->save();
     
-            return view('cliente.cuenta')->with('datos',$datos)->with('mensaje', 'Usuario modificado!');  
+            return back()->with('mensaje', 'Usuario modificado!');  
         }
 
     }
