@@ -91,7 +91,7 @@
       </li>
     </ul>
     <hr>
-    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('cart') }}">Pedido actual</a></p>
+    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('cart.index') }}">Pedido actual</a></p>
   </div>
     </section>
 

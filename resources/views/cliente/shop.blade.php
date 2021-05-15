@@ -1,7 +1,7 @@
 @extends('cliente.plantilla_cliente')
 <link href="css/inicio.css" rel="stylesheet">
 @section('content')
-<section class="flotante">
+<section class="flotante shop">
 <h1 class="titulo_carta" id="titulo_carta">ENTRANTES</h1> 
     <div class="album py-5">
     
@@ -16,11 +16,11 @@
                 <button id="carta_3" onclick="cambiar_boton('carta_3','carta_2','carta_1');" style="background-color:black;padding:5px;margin:5px;" type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" class="active" aria-label="Slide 3"></button>
             </div>
         </div>
-    <div class="container" style="margin-top: 80px">
+    <div class="container" style="text-align:center;">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div>
                         <h4>Products In Our Store</h4>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                                 >
                                 <div class="card-body">
                                     <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
-                                    <p>${{ $pro->price }}</p>
+                                    <p>{{ $pro->price }}€</p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $pro->id }}" id="id" name="id">
@@ -47,8 +47,8 @@
                                         <input type="hidden" value="1" id="quantity" name="quantity">
                                         <div class="card-footer" style="background-color: white;">
                                               <div class="row">
-                                                <button class="btn btn-secondary btn-sm" class="tooltip-test" title="add to cart">
-                                                    <i class="fa fa-shopping-cart"></i> add to cart
+                                                <button class="btn btn-lg btn-home btn-sm" class="tooltip-test" title="add to cart">
+                                                    <i class="fa fa-shopping-cart"></i> Añadir al pedido
                                                 </button>
                                             </div>
                                         </div>

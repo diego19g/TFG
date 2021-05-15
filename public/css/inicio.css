@@ -91,4 +91,13 @@
 .titulo_carta{  
   text-align: center; 
 }
+
+.cart{
+  position: absolute;
+  left: 30%;
+}
   
+.shop{
+  position: absolute;
+  left: 30%;
+}

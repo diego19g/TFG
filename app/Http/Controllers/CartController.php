@@ -30,7 +30,7 @@ class CartController extends Controller
                 'slug'=>$request->slug
             )
         ));
-        return redirect()->route('cart.index')->withTitle('E-COMMERCE STORE | SHOP')->with('success_msg', 'Item is added!');
+        return redirect()->route('cart.index')->withTitle('E-COMMERCE STORE | SHOP');
     }
 
     public function remove(Request $request){
@@ -51,6 +51,6 @@ class CartController extends Controller
 
     public function clear(){
         \Cart::clear();
-        return redirect()->route('cart')->with('success_msg', 'Car is cleared!');
+        return redirect()->route('cart.index')->with('success_msg', 'Car is cleared!');
     }
 }
