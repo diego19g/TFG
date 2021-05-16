@@ -72,7 +72,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('pedidos_cliente') }}" class="nav-link" style="color:black;">
+        <a href="{{ route('guardar_pedido') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           Pedidos
         </a>
