@@ -1,25 +1,5 @@
 @extends('cliente.plantilla_cliente')
 <link href="css/inicio.css" rel="stylesheet">
-<script>
-function mostrar_comida(id,id2,id3){
-  var comida = document.getElementById(id);
-  comida.removeAttribute("style");
-
-  var comida2 = document.getElementById(id2);
-  comida2.removeAttribute("style");
-
-  var atributo2 = document.createAttribute("style");
-  atributo2.value = "display:none;";
-  comida2.setAttributeNode(atributo2);
-
-  var comida3 = document.getElementById(id3);
-  comida3.removeAttribute("style");
-
-  var atributo3 = document.createAttribute("style");
-  atributo3.value = "display:none;";
-  comida3.setAttributeNode(atributo3);
-}
-</script>
 @section('content')
 <section class="flotante shop">
 <h1 class="titulo_carta" id="titulo_carta">ENTRANTES</h1> 

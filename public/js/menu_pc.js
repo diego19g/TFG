@@ -41,4 +41,23 @@ function cambiar_boton(id,id2,id3){
     titulo.innerHTML="BEBIDAS";
   }
 }
+
+function mostrar_comida(id,id2,id3){
+  var comida = document.getElementById(id);
+  comida.removeAttribute("style");
+
+  var comida2 = document.getElementById(id2);
+  comida2.removeAttribute("style");
+
+  var atributo2 = document.createAttribute("style");
+  atributo2.value = "display:none;";
+  comida2.setAttributeNode(atributo2);
+
+  var comida3 = document.getElementById(id3);
+  comida3.removeAttribute("style");
+
+  var atributo3 = document.createAttribute("style");
+  atributo3.value = "display:none;";
+  comida3.setAttributeNode(atributo3);
+}
   
