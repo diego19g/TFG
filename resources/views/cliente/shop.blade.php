@@ -35,7 +35,7 @@
                                      alt="{{ $pro->image_path }}"
                                 >
                                 <div class="card-body">
-                                    <a href=""><h6 class="card-title">{{ $pro->name }}</h6></a>
+                                    <h6 class="card-title">{{ $pro->name }}</h6>
                                     <p>{{ $pro->price }}€</p>
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
