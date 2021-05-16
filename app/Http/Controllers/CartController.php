@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Pedido;
 
 class CartController extends Controller
 {
@@ -52,5 +53,22 @@ class CartController extends Controller
     public function clear(){
         \Cart::clear();
         return redirect()->route('cart.index');
+    }
+
+    public function GuardarPedido(){
+        $productos=\Cart::getContent();
+
+        $pedido=new Pedido();
+        $pedido->id=rand(1,1000);
+        foreach($productos as $pro){
+            $pedido->name=$pro->name;
+            $pedido->price=$pro->price;
+            $pedido->quantity=$pro->quantity;
+            $pedido->email=session('email');
+    
+            $pedido->save();
+        }
+
+        return view('cliente.pedidos_cliente');
     }
 }
