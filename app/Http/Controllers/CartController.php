@@ -80,7 +80,7 @@ class CartController extends Controller
             ]);
         }
     
-        return view('cliente.pedidos_cliente');
+        return redirect()->route('mostrar_pedidos');
         
     }
 }

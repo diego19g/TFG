@@ -75,3 +75,7 @@ button a:hover{
   position: absolute;
   left: 30%;
 }
+
+.fondo_tabla{
+  background-color: rgb(250, 214, 214);
+}

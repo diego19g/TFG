@@ -5,7 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DatosController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PedidosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +41,7 @@ Route::post('/remove', [CartController::class,'remove'])->name('cart.remove');
 Route::post('/clear', [CartController::class,'clear'])->name('cart.clear');
 
 Route::get('/guardar_pedido', [CartController::class,'GuardarPedido'])->name('guardar_pedido');
+Route::get('/mostrar_pedidos', [PedidosController::class,'MostrarPedidos'])->name('mostrar_pedidos');
 
 
 
