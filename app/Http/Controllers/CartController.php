@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Pedido;
+use DB;
 
 class CartController extends Controller
 {
@@ -60,17 +61,24 @@ class CartController extends Controller
 
         $pedido=new Pedido();
         $id=rand(1,1000);
-        foreach($productos as $pro){
+        foreach($productos as $pro){            
             $pedido->email=session('email');
-            $pedido->numero_pedido=$id;
+            $pedido->numero_pedido=$id;            
             $pedido->name=$pro->name;
             $pedido->price=$pro->price;
             $pedido->quantity=$pro->quantity;
             
-    
             //$pedido->save();
+            DB::table('pedidos')->insert([
+                'email' => $pedido->email,
+                'numero_pedido'=>$pedido->numero_pedido,
+                'name'=>$pedido->name,
+                'price'=>$pedido->price,
+                'quantity'=>$pedido->quantity,
+            ]);
         }
-
-        return view('cliente.pedidos_cliente')->with(['prod'=>$pedido]);
+    
+        return view('cliente.pedidos_cliente');
+        
     }
 }
