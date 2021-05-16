@@ -66,7 +66,7 @@ class CartController extends Controller
             $pedido->quantity=$pro->quantity;
             $pedido->email=session('email');
     
-         //   $pedido->save();
+            //$pedido->save();
         }
 
         return view('cliente.pedidos_cliente')->with(['prod'=>$pedido]);
