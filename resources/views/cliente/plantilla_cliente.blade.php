@@ -53,7 +53,7 @@
   </svg>
 
   <div class="d-flex flex-column p-3" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="color:black;">
+    <a href="{{ route('home_cliente') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="color:black;">
       <svg  xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6v8h3v8h2V2c-2.76 0-5 2.24-5 4zm-5 3H9V2H7v7H5V2H3v7c0 2.21 1.79 4 4 4v9h2v-9c2.21 0 4-1.79 4-4V2h-2v7z"/></svg>
       <span style="margin-left:15px;" class="fs-4">Menú usuario</span>
     </a>
