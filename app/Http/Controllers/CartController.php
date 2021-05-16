@@ -59,12 +59,14 @@ class CartController extends Controller
         $productos=\Cart::getContent();
 
         $pedido=new Pedido();
-        $pedido->id=rand(1,1000);
+        $id=rand(1,1000);
         foreach($productos as $pro){
+            $pedido->email=session('email');
+            $pedido->numero_pedido=$id;
             $pedido->name=$pro->name;
             $pedido->price=$pro->price;
             $pedido->quantity=$pro->quantity;
-            $pedido->email=session('email');
+            
     
             //$pedido->save();
         }
