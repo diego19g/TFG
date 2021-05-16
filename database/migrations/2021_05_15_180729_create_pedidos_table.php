@@ -19,8 +19,10 @@ class CreatePedidosTable extends Migration
             $table->integer('numero_pedido');
             $table->string('name');
             $table->double('price');
-            $table->integer('quantity');                       
+            $table->integer('quantity');  
+            $table->string('estado');                    
             $table->timestamps();
+            
         });
     }
 

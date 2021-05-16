@@ -76,6 +76,7 @@ class CartController extends Controller
                 'price'=>$pedido->price,
                 'quantity'=>$pedido->quantity,
                 'created_at'=>date("Y-m-d H:i:s"),
+                'estado'=>"Pedido confirmado",
             ]);
         }
     
