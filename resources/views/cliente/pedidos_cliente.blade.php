@@ -5,10 +5,10 @@
 <h2 style="text-align:center;">Pedidos</h2>
       <div class="table-responsive">
       @foreach($num as $numero)
+      <h3>ID Pedido: {{$numero->numero_pedido}}</h3>
         <table class="table table-striped table-sm fondo_tabla">
           <thead>
-            <tr>
-              <th>Nº Pedido</th>
+            <tr>              
               <th>Elemento</th>
               <th>Precio</th>
               <th>Cantidad</th>
@@ -19,8 +19,7 @@
           <tbody>          
           @foreach($pedidos as $item)
           @if($numero->numero_pedido==$item->numero_pedido)
-            <tr>
-              <td>{{ $item->numero_pedido }}</td>
+            <tr>              
               <td>{{ $item->name }}</td>
               <td>{{ $item->price }}</td>
               <td>{{ $item->quantity }}</td>
@@ -29,8 +28,9 @@
             </tr>
             @endif
             @endforeach
-            @endforeach
+          
           </tbody>
         </table>
+        @endforeach
       </div>
 @endsection
