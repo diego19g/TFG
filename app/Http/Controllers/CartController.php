@@ -79,8 +79,13 @@ class CartController extends Controller
                 'estado'=>"Pedido confirmado",
             ]);
         }
-    
+        \Cart::clear();
         return redirect()->route('mostrar_pedidos');
         
+    }
+
+    public function CerrarSesion(){
+        \Cart::clear();
+        return view('login');
     }
 }

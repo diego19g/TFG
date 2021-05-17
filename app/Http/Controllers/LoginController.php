@@ -29,7 +29,20 @@ class LoginController extends Controller
             }
 
         }else{
-            echo 'Login failed';
+            $checkLogin2=DB::table('restaurantes')->where(['name'=>$email])->get();
+
+            if(count($checkLogin2) >0){ 
+                $hash=DB::table('restaurantes')->where(['name'=>$email])->first();            
+                if(Hash::check($password,$hash->password)){
+                    session(['email' => $email]);
+                    return redirect(route('home_restaurante'));
+                }   else{
+                    echo "'Login failed'";
+                }
+    
+            }else{
+                echo "'Login failed'";
+            }
         }
         
     }
