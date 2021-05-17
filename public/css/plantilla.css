@@ -79,3 +79,7 @@ button a:hover{
 .fondo_tabla{
   background-color: rgb(250, 214, 214);
 }
+
+.tabla_pedido{
+  background-color: white;
+}
