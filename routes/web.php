@@ -22,7 +22,6 @@ Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
 Route::view('carta', 'carta')->name('carta');
 Route::view('carta_cliente', 'cliente.carta_cliente')->name('carta_cliente');
-Route::view('pedidos_cliente', 'cliente.pedidos_cliente')->name('pedidos_cliente');
 Route::view('pedido_actual', 'cliente.compra_actual')->name('compra');
 
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
@@ -42,6 +41,7 @@ Route::post('/clear', [CartController::class,'clear'])->name('cart.clear');
 
 Route::get('/guardar_pedido', [CartController::class,'GuardarPedido'])->name('guardar_pedido');
 Route::get('/mostrar_pedidos', [PedidosController::class,'MostrarPedidos'])->name('mostrar_pedidos');
+Route::get('total_pedidos', [PedidosController::class,'TotalPedidos'])->name('total_pedidos');
 
 
 

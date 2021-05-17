@@ -11,6 +11,7 @@
               <th>Elemento</th>
               <th>Precio</th>
               <th>Cantidad</th>
+              <th>Estado</th>
               <th>Fecha</th>
             </tr>
           </thead>
@@ -21,6 +22,7 @@
               <td>{{ $item->name }}</td>
               <td>{{ $item->price }}</td>
               <td>{{ $item->quantity }}</td>
+              <td>{{ $item->estado }}</td>
               <td>{{ $item->created_at }}</td>
             </tr>
             @endforeach

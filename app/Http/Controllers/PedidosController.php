@@ -13,4 +13,11 @@ class PedidosController extends Controller
 
         return view("cliente.pedidos_cliente")->with(['pedidos'=>$pedidos]);
     }
+
+    public function TotalPedidos(){
+        $email=session('email');
+        $pedidos=DB::table('pedidos')->where(['email'=>$email])->orderByDesc('created_at')->get();
+
+        return view("cliente.pedidos_cliente")->with(['pedidos'=>$pedidos]);
+    }
 }
