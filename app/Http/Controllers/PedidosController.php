@@ -17,7 +17,8 @@ class PedidosController extends Controller
     public function TotalPedidos(){
         $email=session('email');
         $pedidos=DB::table('pedidos')->where(['email'=>$email])->orderByDesc('created_at')->get();
+        $num = DB::table('pedidos')->distinct()->select('numero_pedido')->orderByDesc('created_at')->get();
 
-        return view("cliente.pedidos_cliente")->with(['pedidos'=>$pedidos]);
+        return view("cliente.pedidos_cliente")->with(['pedidos'=>$pedidos,'num'=>$num]);
     }
 }
