@@ -21,7 +21,7 @@
 @endif
     @if($e->estado=='Pedido confirmado')
     <div style="text-align:center;">
-        <img src="gifs/pedido_confirmado.gif">
+        <img src="gifs/pedido_confirmado.gif" width="300px" height="300px">
     </div>    
     <br>
     <div class="progress fondo_progreso">
