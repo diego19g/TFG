@@ -23,8 +23,9 @@ class PedidosController extends Controller
         return view("cliente.pedidos_cliente")->with(['pedidos'=>$pedidos,'num'=>$num]);
     }
 
-    public function SeguimientoPedido($numero_pedido){
+    public function SeguimientoPedido(Request $request){
         $email=session('email');
+        $numero_pedido=$request->numero_pedido;
         $estado = DB::table('pedidos')->distinct()->select('estado')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
 
         return view("cliente.seguimiento_pedido")->with(['estado'=>$estado]);

@@ -31,7 +31,11 @@
         <h4>Realizado: {{$numero->created_at}}</h4>                 
       </div>
       <br>
-      <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('seguimiento_pedido',$numero->numero_pedido) }}">Seguimiento del pedido</a>
+      <form method="POST" action="{{ route('seguimiento_pedido') }}">
+      @csrf
+      <input type="hidden" name="numero_pedido" value="{{$numero->numero_pedido}}">
+      <input type="submit" name="seguimiento_pedido" value="Seguimiento del pedido" class="btn btn-lg btn-home" />
+      </form>
       <br><hr><br>
       @endforeach
 </section>
