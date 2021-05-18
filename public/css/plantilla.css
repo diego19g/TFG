@@ -83,3 +83,7 @@ button a:hover{
 .tabla_pedido{
   background-color: rgb(250, 214, 214);
 }
+
+.fondo_progreso{
+  background-color: black;
+}
