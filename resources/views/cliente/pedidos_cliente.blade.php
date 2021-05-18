@@ -28,9 +28,10 @@
           
           </tbody>
         </table>
-        <h4>Realizado: {{$numero->created_at}}</h4>
-        <h4>Estado: {{$numero->estado}}</h4>                    
+        <h4>Realizado: {{$numero->created_at}}</h4>                 
       </div>
+      <br>
+      <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('seguimiento_pedido',$numero->numero_pedido) }}">Seguimiento del pedido</a>
       <br><hr><br>
       @endforeach
 </section>

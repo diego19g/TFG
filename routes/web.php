@@ -45,6 +45,7 @@ Route::post('/clear', [CartController::class,'clear'])->name('cart.clear');
 Route::get('/guardar_pedido', [CartController::class,'GuardarPedido'])->name('guardar_pedido');
 Route::get('/mostrar_pedidos', [PedidosController::class,'MostrarPedidos'])->name('mostrar_pedidos');
 Route::get('total_pedidos', [PedidosController::class,'TotalPedidos'])->name('total_pedidos');
+Route::get('seguimiento_pedido/{numero_pedido}', [PedidosController::class,'SeguimientoPedido'])->name('seguimiento_pedido');
 
 //rutas restaurante
 Route::view('home_restaurante', 'restaurante.home_restaurante')->name('home_restaurante');
