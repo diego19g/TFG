@@ -51,6 +51,7 @@ Route::post('seguimiento_pedido', [PedidosController::class,'SeguimientoPedido']
 Route::view('home_restaurante', 'restaurante.home_restaurante')->name('home_restaurante');
 Route::get('pedidos_restaurante', [RestauranteController::class,'PedidosRestaurante'])->name('pedidos_restaurante');
 Route::get('ultimo_pedido', [RestauranteController::class,'UltimoPedido'])->name('ultimo_pedido');
+Route::post('acceder_pedido', [RestauranteController::class,'AccederPedido'])->name('acceder_pedido');
 
 
 

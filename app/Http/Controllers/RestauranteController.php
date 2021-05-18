@@ -21,4 +21,11 @@ class RestauranteController extends Controller
 
         return view("restaurante.ultimo_pedido")->with(['pedidos'=>$pedidos,'num'=>$num]);
     }
+
+    public function AccederPedido(Request $request){
+        $numero_pedido=$request->numero_pedido;
+        $pedido=DB::table('pedidos')->distinct()->where(['numero_pedido'=>$numero_pedido])->get();   
+
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+    }
 }

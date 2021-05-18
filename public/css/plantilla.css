@@ -87,3 +87,27 @@ button a:hover{
 .fondo_progreso{
   background-color: black;
 }
+
+.pedido_confirmado{
+  color: white;
+  background-color: #002efd;
+  border-color: #002efd;
+}
+
+.en_cocina{
+  color: white;
+  background-color: #059c00;
+  border-color: #059c00;
+}
+
+.enviado{
+  color: white;
+  background-color: #a8bb00;
+  border-color: #a8bb00;
+}
+
+.entregado{
+  color: white;
+  background-color: #f82727;
+  border-color: #f82727;
+}
