@@ -16,19 +16,23 @@ class DatosController extends Controller
     }
 
     public function ModificarDatos(Request $request){
-        $user=User::find($request->email);
+        $email = session('email');   
+        $user = DB::table('users')->where(['email'=>$email])->get();
+               
+            if($request->password == $request->password2){
+                $user->name = $request->nombre;
+                $user->surname = $request->apellido;
+                $user->password = Hash::make($request->password);
+     
+                $user->save();
 
-        if($request->password != $request->password2){
-            return back()->with('mensaje', 'La contraseña no coincide!');  
-        }else{
-            $user->name = $request->nombre;
-            $user->surname = $request->apellido;
-            $user->email = $request->email;
-            $user->password=Hash::make($request->password);
-            $user->save();
-    
-            return back()->with('mensaje', 'Usuario modificado!');  
-        }
+                return view('prueba')->with(['datos'=>$user]);
+            }else{
+               echo "La contraseña no coincide";
+            }
+
+        
+        
 
     }
 }

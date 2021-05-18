@@ -10,7 +10,7 @@
 
         <div>
          <form action="{{ route('modificar_datos') }}" method="POST">
-             @method('PUT')
+            @method('PUT')
              @csrf
             <div>            
                 <div class="input-group mb-3">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Email</span>
-                    <input type="text" name="email" class="form-control" placeholder="{{ $datos->email }}" aria-label="Email" aria-describedby="basic-addon1">
+                    <input type="text" name="email" class="form-control" placeholder="{{ $datos->email }}" aria-label="Email" aria-describedby="basic-addon1" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
