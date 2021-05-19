@@ -17,22 +17,23 @@ class DatosController extends Controller
 
     public function ModificarDatos(Request $request){
         $email = session('email');   
-        $user = DB::table('users')->where(['email'=>$email])->get();
+        $user=User::where('email',$email)->get();   
+        //$user = DB::table('users')->where(['email'=>$email])->get();
                
             if($request->password == $request->password2){
-                $user->name = $request->nombre;
-                $user->surname = $request->apellido;
-                $user->password = Hash::make($request->password);
-     
-                $user->save();
-
-                return view('prueba')->with(['datos'=>$user]);
+                foreach($user as $us){
+                    $us->name = $request->nombre;
+                    $us->surname = $request->apellido;
+                    $us->password = Hash::make($request->password);
+         
+                    $us->save();
+    
+                }                      
+            
+                return redirect(route('cuenta'));
             }else{
                echo "La contraseña no coincide";
-            }
-
-        
-        
+            }                
 
     }
 }
