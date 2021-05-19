@@ -26,8 +26,12 @@
     <h4>Modificar estado del pedido</h4>
     <br>
     <div>
-        <a href="" class="btn pedido_confirmado">Pedido confirmado</a>
-        <a href="" class="btn en_cocina">En cocina</a>
+    <a href="" class="btn pedido_confirmado">Pedido confirmado</a>
+        <form method="POST" action="{{ route('en_cocina',$ped->numero_pedido) }}">
+        @method('PUT')
+        @csrf        
+        <input type="submit" value="En cocina" class="btn en_cocina">
+        </form>
         <a href="" class="btn enviado">Enviado</a>
         <a href="" class="btn entregado">Entregado</a>
     </div>

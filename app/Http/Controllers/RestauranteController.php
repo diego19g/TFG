@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Pedido;
 
 class RestauranteController extends Controller
 {
@@ -25,6 +26,16 @@ class RestauranteController extends Controller
     public function AccederPedido(Request $request){
         $numero_pedido=$request->numero_pedido;
         $pedido=DB::table('pedidos')->distinct()->where(['numero_pedido'=>$numero_pedido])->get();   
+
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+    }
+
+    public function EnCocina($numero_pedido){                
+        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        foreach($pedido as $ped){
+            $ped->estado='En cocina';             
+            $ped->save(); 
+        }                  
 
         return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
     }

@@ -53,6 +53,8 @@ Route::get('pedidos_restaurante', [RestauranteController::class,'PedidosRestaura
 Route::get('ultimo_pedido', [RestauranteController::class,'UltimoPedido'])->name('ultimo_pedido');
 Route::post('acceder_pedido', [RestauranteController::class,'AccederPedido'])->name('acceder_pedido');
 
+Route::put('en_cocina/{numero_pedido}', [RestauranteController::class,'EnCocina'])->name('en_cocina');
+
 
 
 
