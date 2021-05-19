@@ -26,6 +26,15 @@ class PedidosController extends Controller
     public function SeguimientoPedido(Request $request){
         $email=session('email');
         $numero_pedido=$request->numero_pedido;
+        session(['numero_pedido'=>$numero_pedido]);
+        $estado = DB::table('pedidos')->distinct()->select('estado')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
+
+        return view("cliente.seguimiento_pedido")->with(['estado'=>$estado]);
+    }
+
+    public function Refrescar(){
+        $email=session('email');
+        $numero_pedido=session('numero_pedido');
         $estado = DB::table('pedidos')->distinct()->select('estado')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
 
         return view("cliente.seguimiento_pedido")->with(['estado'=>$estado]);
