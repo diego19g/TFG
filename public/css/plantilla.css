@@ -111,3 +111,12 @@ button a:hover{
   background-color: #f82727;
   border-color: #f82727;
 }
+
+.botones_pedido{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forms_pedido{
+  margin:5px;
+}

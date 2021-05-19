@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurante</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/plantilla.css" rel="stylesheet">        
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/plantilla.css') }}" rel="stylesheet">        
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">   
-  <link href="css/menu_pc.css" rel="stylesheet">
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/menu_pc.js"></script>
+  <link href="{{ asset('css/menu_pc.css') }}" rel="stylesheet">
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('js/menu_pc.js') }}"></script>
   @yield('link')
 </head>
 <body>

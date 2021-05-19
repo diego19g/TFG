@@ -54,6 +54,9 @@ Route::get('ultimo_pedido', [RestauranteController::class,'UltimoPedido'])->name
 Route::post('acceder_pedido', [RestauranteController::class,'AccederPedido'])->name('acceder_pedido');
 
 Route::put('en_cocina/{numero_pedido}', [RestauranteController::class,'EnCocina'])->name('en_cocina');
+Route::put('pedido_confirmado/{numero_pedido}', [RestauranteController::class,'PedidoConfirmado'])->name('pedido_confirmado');
+Route::put('enviado/{numero_pedido}', [RestauranteController::class,'Enviado'])->name('enviado');
+Route::put('entregado/{numero_pedido}', [RestauranteController::class,'Entregado'])->name('entregado');
 
 
 

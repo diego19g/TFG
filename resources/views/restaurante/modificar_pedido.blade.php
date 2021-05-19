@@ -25,15 +25,27 @@
     <br><hr><br>
     <h4>Modificar estado del pedido</h4>
     <br>
-    <div>
-    <a href="" class="btn pedido_confirmado">Pedido confirmado</a>
-        <form method="POST" action="{{ route('en_cocina',$ped->numero_pedido) }}">
+    <div class="botones_pedido">
+        <form method="POST" action="{{ route('pedido_confirmado',$ped->numero_pedido) }}" class="forms_pedido">
+        @method('PUT')
+        @csrf  
+            <input type="submit" value="Pedido confirmado" class="btn pedido_confirmado">
+        </form>
+        <form method="POST" action="{{ route('en_cocina',$ped->numero_pedido) }}" class="forms_pedido">
         @method('PUT')
         @csrf        
-        <input type="submit" value="En cocina" class="btn en_cocina">
+            <input type="submit" value="En cocina" class="btn en_cocina">
         </form>
-        <a href="" class="btn enviado">Enviado</a>
-        <a href="" class="btn entregado">Entregado</a>
+        <form method="POST" action="{{ route('enviado',$ped->numero_pedido) }}" class="forms_pedido">
+        @method('PUT')
+        @csrf    
+            <input type="submit" value="Enviado" class="btn enviado">
+        </form>
+        <form method="POST" action="{{ route('entregado',$ped->numero_pedido) }}" class="forms_pedido">
+        @method('PUT')
+        @csrf    
+            <input  type="submit" value="Entregado" class="btn entregado">
+        </form>
     </div>
 </section>
 

@@ -32,8 +32,42 @@ class RestauranteController extends Controller
 
     public function EnCocina($numero_pedido){                
         $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        
         foreach($pedido as $ped){
             $ped->estado='En cocina';             
+            $ped->save(); 
+        }                  
+
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+    }
+
+    public function PedidoConfirmado($numero_pedido){                
+        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        
+        foreach($pedido as $ped){
+            $ped->estado='Pedido confirmado';             
+            $ped->save(); 
+        }                  
+
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+    }
+
+    public function Enviado($numero_pedido){                
+        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        
+        foreach($pedido as $ped){
+            $ped->estado='Enviado';             
+            $ped->save(); 
+        }                  
+
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+    }
+
+    public function Entregado($numero_pedido){                
+        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        
+        foreach($pedido as $ped){
+            $ped->estado='Entregado';             
             $ped->save(); 
         }                  
 
