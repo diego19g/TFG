@@ -8,6 +8,8 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/plantilla.css" rel="stylesheet">      
   <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/menu_pc.js"></script>
 </head>
 <body>
 <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
@@ -18,7 +20,7 @@
 
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
       <a class="me-3 py-2 text-dark text-decoration-none" href="{{ route('home') }}">SOBRE NOSOTROS</a>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="{{ route('carta') }}">CARTA</a>
+      <a class="me-3 py-2 text-dark text-decoration-none" href="{{ route('carta_inicio') }}">CARTA</a>
       <a class="me-3 py-2 text-dark text-decoration-none" href="#">CONTACTO</a>
     </nav>
 

@@ -15,6 +15,12 @@ class CartController extends Controller
         return view('cliente.shop')->withTitle('E-COMMERCE STORE | SHOP')->with(['products'=>$products]);
     }
 
+    public function CartaInicio(){
+        $products=Product::all();
+        //dd($products);
+        return view('carta')->withTitle('E-COMMERCE STORE | SHOP')->with(['products'=>$products]);
+    }
+
     public function cart(){
         $cartCollection=\Cart::getContent();
         //dd($cartCollection);

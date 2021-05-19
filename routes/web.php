@@ -21,7 +21,7 @@ use App\Http\Controllers\RestauranteController;
 
 Route::view('/', 'home')->name('home');
 Route::view('login', 'login')->name('login');
-Route::view('carta', 'carta')->name('carta');
+Route::get('/carta', [CartController::class,'CartaInicio'])->name('carta_inicio');
 Route::view('carta_cliente', 'cliente.carta_cliente')->name('carta_cliente');
 Route::view('pedido_actual', 'cliente.compra_actual')->name('compra');
 
