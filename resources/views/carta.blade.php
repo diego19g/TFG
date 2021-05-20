@@ -37,7 +37,7 @@
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $pro->name }}</h6>
                                     <div class="card-footer" style="background-color: white;">
-                                      <p>{{ $pro->price }}€</p>
+                                      <p class="precio_carta">{{ $pro->price }}€</p>
                                     </div>                                   
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
@@ -67,7 +67,7 @@
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $pro->name }}</h6>
                                     <div class="card-footer" style="background-color: white;">
-                                      <p>{{ $pro->price }}€</p>
+                                      <p class="precio_carta">{{ $pro->price }}€</p>
                                     </div>         
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}
@@ -97,7 +97,7 @@
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $pro->name }}</h6>
                                     <div class="card-footer" style="background-color: white;">
-                                      <p>{{ $pro->price }}€</p>
+                                      <p class="precio_carta">{{ $pro->price }}€</p>
                                     </div>         
                                     <form action="{{ route('cart.store') }}" method="POST">
                                         {{ csrf_field() }}

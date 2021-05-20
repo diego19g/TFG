@@ -10,34 +10,34 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <!--Quitar esto y poner foto comida--><svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="bd-placeholder-img" width="100%" height="100%" src="images/hamburguesa_home.png">
 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <h1>Hamburguesas de la mejor calidad</h1>
+            <p>Disfruta de nuestra mejor carne de vacuno acompañada de los mejores ingredientes</p>
             <p><a class="btn btn-lg btn-home enlace_login_home" href="{{ route('login') }}">Registrarse / Iniciar sesión</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="bd-placeholder-img" width="100%" height="100%" src="images/burrito_home.png">
 
         <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
+          <div class="carousel-caption text-start">
+            <h1>Burritos receta 100% mexicana</h1>
+            <p>Nuestros burritos se elaboran con productos traídos de México</p>
             <p><a class="btn btn-lg btn-home enlace_login_home" href="{{ route('login') }}">Registrarse / Iniciar sesión</a></p>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
+      <div class="carousel-item">        
+        <img class="bd-placeholder-img" width="100%" height="100%" src="images/patatas_home.png">
+        
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <h1>Complementos</h1>
+            <p>¿Te has quedado con hambre? Disfruta de nuestros acompañamientos, patatas, alitas...</p>
             <p><a class="btn btn-lg btn-home enlace_login_home" href="{{ route('login') }}">Registrarse / Iniciar sesión</a></p>
           </div>
         </div>

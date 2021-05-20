@@ -120,3 +120,8 @@ button a:hover{
 .forms_pedido{
   margin:5px;
 }
+
+.precio_carta{
+  background-color: #df3333;
+  color:white;
+}
