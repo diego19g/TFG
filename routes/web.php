@@ -53,6 +53,7 @@ Route::view('home_restaurante', 'restaurante.home_restaurante')->name('home_rest
 Route::get('pedidos_restaurante', [RestauranteController::class,'PedidosRestaurante'])->name('pedidos_restaurante');
 Route::get('ultimo_pedido', [RestauranteController::class,'UltimoPedido'])->name('ultimo_pedido');
 Route::post('acceder_pedido', [RestauranteController::class,'AccederPedido'])->name('acceder_pedido');
+Route::get('/carta_restaurante', [CartController::class,'CartaRestaurante'])->name('shop_restaurante');
 
 Route::put('en_cocina/{numero_pedido}', [RestauranteController::class,'EnCocina'])->name('en_cocina');
 Route::put('pedido_confirmado/{numero_pedido}', [RestauranteController::class,'PedidoConfirmado'])->name('pedido_confirmado');

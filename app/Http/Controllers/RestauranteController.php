@@ -17,10 +17,10 @@ class RestauranteController extends Controller
     }
 
     public function UltimoPedido(){
-        $pedidos=DB::table('pedidos')->orderByDesc('created_at')->get();
-        $num = DB::table('pedidos')->select('numero_pedido','created_at','estado')->orderByDesc('created_at')->first();
+        $ped=DB::table('pedidos')->orderByDesc('created_at')->get();
+        $numero = DB::table('pedidos')->select('numero_pedido','created_at','estado')->orderByDesc('created_at')->first();
 
-        return view("restaurante.ultimo_pedido")->with(['pedidos'=>$pedidos,'num'=>$num]);
+        return view("restaurante.ultimo_pedido")->with(['ped'=>$ped,'numero'=>$numero]);
     }
 
     public function AccederPedido(Request $request){

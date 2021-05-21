@@ -21,6 +21,12 @@ class CartController extends Controller
         return view('carta')->withTitle('E-COMMERCE STORE | SHOP')->with(['products'=>$products]);
     }
 
+    public function CartaRestaurante(){
+        $products=Product::all();
+        //dd($products);
+        return view('restaurante.shop_restaurante')->withTitle('E-COMMERCE STORE | SHOP')->with(['products'=>$products]);
+    }
+
     public function cart(){
         $cartCollection=\Cart::getContent();
         //dd($cartCollection);
