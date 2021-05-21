@@ -9,7 +9,7 @@
     </div>
 
         <div>
-         <form action="{{ route('modificar_datos') }}" method="POST">
+         <form class="actualizar_datos" action="{{ route('modificar_datos') }}" method="POST">
             @method('PUT')
              @csrf
             <div>            
@@ -38,6 +38,34 @@
             </form>
     </div>
 </section>
+
+
+@endsection
+
+@section('js')
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    $('.actualizar_datos').submit(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Estás seguro de actualizar tus datos?',
+                text: "¡Tus datos de usuario se cambiarán!",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, actualizar mis datos'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            })
+        });
+</script>
 
 
 @endsection
