@@ -80,9 +80,9 @@
                     <hr>
                 @endforeach
                 @if(count($cartCollection)>0)
-                    <form action="{{ route('cart.clear') }}" method="POST">
+                    <form class="formulario_eliminar" action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Borrar todo</button>
+                        <button type="submit" class="btn btn-secondary btn-md">Borrar todo</button>
                     </form>
                 @endif
             </div>
@@ -101,4 +101,31 @@
         <br><br>
     </div>
 </section>
+@endsection
+
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $('.formulario_eliminar').submit(function(e){
+        e.preventDefault();
+
+        Swal.fire({
+            title: '¿Estás seguro de eliminar todo el pedido?',
+            text: "¡Se eliminarán todos los productos seleccionados!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                this.submit();
+            }
+        })
+    });
+
+
+</script>
+
 @endsection

@@ -11,6 +11,7 @@
   <link href="css/menu_pc.css" rel="stylesheet">
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/menu_pc.js"></script>
+  <script src="js/jquery-3.5.1.js"></script>
   @yield('link')
 </head>
 <body>
@@ -97,7 +98,7 @@
 
 @yield('content')
 </main>
-
+@yield('js')
   
 </body>
 </html>
