@@ -23,7 +23,9 @@
     </a>
   </div>
   <div class="cerrar_sesion">
-    <a class="btn btn-sm btn-outline-secondary" href="{{ route('cerrar_sesion') }}">CERRAR SESIÓN</a>
+    <form class="salir_sesion" action="{{ route('cerrar_sesion') }}">
+      <button type="submit" class="btn btn-sm btn-outline-secondary">CERRAR SESIÓN</button>
+    </form>    
   </div>
     
   </header>
@@ -99,6 +101,27 @@
 @yield('content')
 </main>
 @yield('js')
-  
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    $('.salir_sesion').submit(function(e){
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Estás seguro de cerrar sesión?',
+                text: "¡Irás a la página de inicio de nuevo!",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, cerrar mi sesión'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            })
+        });
+</script>
 </body>
 </html>
