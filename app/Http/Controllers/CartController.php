@@ -79,6 +79,7 @@ class CartController extends Controller
             $pedido->name=$pro->name;
             $pedido->price=$pro->price;
             $pedido->quantity=$pro->quantity;
+            $pedido->total=\Cart::getTotal();
             
             //$pedido->save();
             DB::table('pedidos')->insert([
@@ -88,6 +89,7 @@ class CartController extends Controller
                 'price'=>$pedido->price,
                 'quantity'=>$pedido->quantity,
                 'created_at'=>date("Y-m-d H:i:s"),
+                'total'=>$pedido->total,
                 'estado'=>"Pedido confirmado",
             ]);
         }

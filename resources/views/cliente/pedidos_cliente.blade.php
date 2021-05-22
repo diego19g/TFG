@@ -28,7 +28,8 @@
           
           </tbody>
         </table>
-        <h4>Realizado: {{$numero->created_at}}</h4>                 
+        <h4>Realizado: {{$numero->created_at}}</h4> 
+        <h2>Total: {{$numero->total}} €</h2>                    
       </div>
       <br>
       <form method="POST" action="{{ route('seguimiento_pedido') }}">
