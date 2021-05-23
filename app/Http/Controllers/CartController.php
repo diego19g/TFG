@@ -94,7 +94,7 @@ class CartController extends Controller
             ]);
         }
         \Cart::clear();
-        return redirect()->route('mostrar_pedidos');
+        return redirect()->route('pagar');
         
     }
 

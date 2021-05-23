@@ -59,33 +59,17 @@
     </style>
 </head>
 <body>
+@foreach($num as $numero)
     <div id="page-wrap">
 
-    <textarea id="header">INVOICE</textarea>
+    <textarea id="header">PEDIDO</textarea>
 
     <div id="identity">
 
-        <textarea id="address">FOOD GO
-    Calle Pelota 19
-    Valladolid, 47011
-
-    Teléfono: 983 321 456</textarea>
+        <p id="address">FOOD GO<br><br>Calle Pelota 19<br><br>Valladolid, 47011<br><br>Teléfono: 983 321 456</p>
 
         <div id="logo">
-
-        <div id="logoctr">
-            <a href="javascript:;" id="change-logo" title="Change logo">Change Logo</a>
-            <a href="javascript:;" id="save-logo" title="Save changes">Save</a>
-            |
-            <a href="javascript:;" id="delete-logo" title="Delete logo">Delete Logo</a>
-            <a href="javascript:;" id="cancel-logo" title="Cancel changes">Cancel</a>
-        </div>
-
-        <div id="logohelp">
-            <input id="imageloc" type="text" size="50" value="" /><br />
-            (max width: 540px, max height: 100px)
-        </div>
-        <img id="image" src="images/logo.png" alt="logo" />
+            <img id="image" src="images/logo.png" alt="logo" width="100px" height="100px"/>
         </div>
 
     </div>
@@ -94,89 +78,48 @@
 
     <div id="customer">
 
-        <textarea id="customer-title">Widget Corp.
-    c/o Steve Widget</textarea>
-
+        <textarea id="customer-title">FOOD GO</textarea>        
         <table id="meta">
             <tr>
-                <td class="meta-head">Invoice #</td>
-                <td><textarea>000123</textarea></td>
+                <td class="meta-head">ID Pedido</td>
+                <td>{{$numero->numero_pedido}}</td>
             </tr>
             <tr>
 
-                <td class="meta-head">Date</td>
-                <td><textarea id="date">December 15, 2009</textarea></td>
+                <td class="meta-head">Fecha</td>
+                <td>{{$numero->created_at}}</td>
             </tr>
             <tr>
-                <td class="meta-head">Amount Due</td>
-                <td><div class="due">$875.00</div></td>
+                <td class="meta-head">Total</td>
+                <td>{{$numero->total}} €</td>
             </tr>
 
-        </table>
-
+        </table>       
     </div>
 
-    <table id="items">
+    <table id="items" style="text-align:center;">
 
     <tr>
-        <th>Item</th>
-        <th>Description</th>
-        <th>Unit Cost</th>
-        <th>Quantity</th>
-        <th>Price</th>
+        <th>Elemento</th>
+        <th>Cantidad</th>
+        <th>Precio</th>        
     </tr>
-    
+    @foreach($pedido as $item)
     <tr class="item-row">
-        <td class="item-name"><div class="delete-wpr"><textarea>Web Updates</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
-        <td class="description"><textarea>Monthly web updates for http://widgetcorp.com (Nov. 1 - Nov. 30, 2009)</textarea></td>
-        <td><textarea class="cost">$650.00</textarea></td>
-        <td><textarea class="qty">1</textarea></td>
-        <td><span class="price">$650.00</span></td>
+        <td>{{ $item->name }}</td>        
+        <td>{{ $item->quantity }}</td>
+        <td>{{ $item->price }} €</td>
     </tr>
-    
-    <tr class="item-row">
-        <td class="item-name"><div class="delete-wpr"><textarea>SSL Renewals</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td>
-
-        <td class="description"><textarea>Yearly renewals of SSL certificates on main domain and several subdomains</textarea></td>
-        <td><textarea class="cost">$75.00</textarea></td>
-        <td><textarea class="qty">3</textarea></td>
-        <td><span class="price">$225.00</span></td>
-    </tr>
-    
-    <tr id="hiderow">
-        <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
-    </tr>
+    @endforeach
     
     <tr>
-        <td colspan="2" class="blank"> </td>
-        <td colspan="2" class="total-line">Subtotal</td>
-        <td class="total-value"><div id="subtotal">$875.00</div></td>
-    </tr>
-    <tr>
 
-        <td colspan="2" class="blank"> </td>
-        <td colspan="2" class="total-line">Total</td>
-        <td class="total-value"><div id="total">$875.00</div></td>
+        <td colspan="1" class="blank"> </td>
+        <td colspan="1" class="total-line">Total</td>
+        <td class="total-value">{{$numero->total}} €</td>
     </tr>
-    <tr>
-        <td colspan="2" class="blank"> </td>
-        <td colspan="2" class="total-line">Amount Paid</td>
-
-        <td class="total-value"><textarea id="paid">$0.00</textarea></td>
-    </tr>
-    <tr>
-        <td colspan="2" class="blank"> </td>
-        <td colspan="2" class="total-line balance">Balance Due</td>
-        <td class="total-value balance"><div class="due">$875.00</div></td>
-    </tr>
-
-    </table>
-
-    <div id="terms">
-    <h5>Terms</h5>
-    <textarea>NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
-    </div>
 
     </div>
+    @endforeach
 </body>
 </html>
