@@ -2,6 +2,8 @@
 
 @section('content')
 <section class="flotante" style="text-align:center;position:absolute;left:40%;">
+@foreach($num as $numero)
+    <h4>ID: {{$numero->numero_pedido}}</h4>
     <table class="table table-striped table-sm fondo_tabla">
         <thead>
         <tr>              
@@ -20,7 +22,9 @@
         @endforeach     
         </tbody>
     </table>
-    <br><hr><br>
+    <h4>Total: {{$numero->total}} €</h4>
+    <h4>Realizado: {{$numero->created_at}}</h4>
+    <hr><br>
     <h4>Estado del pedido: {{$ped->estado}}</h4>
     <br><hr><br>
     <h4>Modificar estado del pedido</h4>
@@ -47,6 +51,7 @@
             <input  type="submit" value="Entregado" class="btn entregado">
         </form>
     </div>
+@endforeach
 </section>
 
 @endsection
