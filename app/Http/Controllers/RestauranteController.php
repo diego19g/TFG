@@ -33,45 +33,49 @@ class RestauranteController extends Controller
 
     public function EnCocina($numero_pedido){                
         $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        $num = DB::table('pedidos')->distinct()->select('numero_pedido','created_at','total')->where(['numero_pedido'=>$numero_pedido])->get();
         
         foreach($pedido as $ped){
             $ped->estado='En cocina';             
             $ped->save(); 
         }                  
 
-        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
 
     public function PedidoConfirmado($numero_pedido){                
-        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();  
+        $num = DB::table('pedidos')->distinct()->select('numero_pedido','created_at','total')->where(['numero_pedido'=>$numero_pedido])->get(); 
         
         foreach($pedido as $ped){
             $ped->estado='Pedido confirmado';             
             $ped->save(); 
         }                  
 
-        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
 
     public function Enviado($numero_pedido){                
         $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        $num = DB::table('pedidos')->distinct()->select('numero_pedido','created_at','total')->where(['numero_pedido'=>$numero_pedido])->get();
         
         foreach($pedido as $ped){
             $ped->estado='Enviado';             
             $ped->save(); 
         }                  
 
-        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
 
     public function Entregado($numero_pedido){                
         $pedido=Pedido::where('numero_pedido',$numero_pedido)->get();   
+        $num = DB::table('pedidos')->distinct()->select('numero_pedido','created_at','total')->where(['numero_pedido'=>$numero_pedido])->get();
         
         foreach($pedido as $ped){
             $ped->estado='Entregado';             
             $ped->save(); 
         }                  
 
-        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido]);
+        return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
 }

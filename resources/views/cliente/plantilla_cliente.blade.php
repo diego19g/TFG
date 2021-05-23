@@ -81,12 +81,6 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link" style="color:black;">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-          Products
-        </a>
-      </li>
-      <li>
         <a href="{{ route('cuenta') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
           Mi cuenta
