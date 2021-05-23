@@ -78,7 +78,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('cuenta') }}" class="nav-link" style="color:black;">
+        <a href="{{ route('cuenta_restaurante') }}" class="nav-link" style="color:black;">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
           Mi cuenta
         </a>

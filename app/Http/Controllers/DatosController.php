@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\User;
+use App\Models\Restaurante;
 use Illuminate\Support\Facades\Hash;
 
 class DatosController extends Controller
@@ -38,6 +39,31 @@ class DatosController extends Controller
                 }                      
             
                 return redirect(route('cuenta'));
+            }else{
+               echo "La contraseña no coincide";
+            }                
+
+    }
+
+    public function DatosRestaurante(Request $request){
+
+        $restaurante=Restaurante::all();   
+        //$user = DB::table('users')->where(['email'=>$email])->get();
+        
+        $this->validate($request,[
+            'password'=>'required',
+            'password2'=>'required',
+        ]);
+
+            if($request->password == $request->password2){
+                foreach($restaurante as $res){
+                    $res->password = Hash::make($request->password);
+         
+                    $res->save();
+    
+                }                      
+            
+                return redirect(route('cuenta_restaurante'));
             }else{
                echo "La contraseña no coincide";
             }                

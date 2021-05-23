@@ -16,11 +16,6 @@ class RestaurantesTableSeeder extends Seeder
     public function run()
     {
         Restaurante::create([
-            'name' => 'restaurante456',
-            'password' => Hash::make('456restaurante')
-        ]);
-
-        Restaurante::create([
             'name' => 'restaurante518',
             'password' => Hash::make('518restaurante')
         ]);
