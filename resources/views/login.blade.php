@@ -43,16 +43,16 @@
                 @csrf
                     <ul>
                         <li>
-                            <input type="text" name="nombre" placeholder="Nombre" />
+                            <input type="text" name="nombre" placeholder="Nombre" required/>
                         </li>
                         <li>
-                            <input type="text" name="apellido" placeholder="Apellido" />
+                            <input type="text" name="apellido" placeholder="Apellido" required/>
                         </li>
                         <li>
-                            <input type="text" name="email" placeholder="Email" />
+                            <input type="text" name="email" placeholder="Email" required/>
                         </li>
                         <li>
-                            <input type="password" name="password" placeholder="Password" />
+                            <input type="password" name="password" placeholder="Password" required/>
                         </li>
                         <li>
                             <input type="submit" name="register" value="register" class="button" />
