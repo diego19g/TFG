@@ -47,6 +47,7 @@ Route::get('/mostrar_pedidos', [PedidosController::class,'MostrarPedidos'])->nam
 Route::get('total_pedidos', [PedidosController::class,'TotalPedidos'])->name('total_pedidos');
 Route::post('seguimiento_pedido', [PedidosController::class,'SeguimientoPedido'])->name('seguimiento_pedido');
 Route::get('refresh', [PedidosController::class,'Refrescar'])->name('refresh');
+Route::get('imprimir', [PedidosController::class,'imprimir'])->name('imprimir');
 
 //rutas restaurante
 Route::view('home_restaurante', 'restaurante.home_restaurante')->name('home_restaurante');

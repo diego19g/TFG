@@ -39,4 +39,10 @@ class PedidosController extends Controller
 
         return view("cliente.seguimiento_pedido")->with(['estado'=>$estado]);
     }
-}
+
+    public function imprimir(){
+        $numero_pedido=session('numero_pedido');
+        $pedido=DB::table('pedidos')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
+        $pdf = \PDF::loadView('pdf_pedido', compact('pedido'));
+        return $pdf->download('pdf_pedido.pdf');
+    }
