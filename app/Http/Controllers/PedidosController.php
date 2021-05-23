@@ -43,8 +43,10 @@ class PedidosController extends Controller
     public function imprimir(){
         $email=session('email');
         $numero_pedido=session('numero_pedido');
+
         $pedido=DB::table('pedidos')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
         $num = DB::table('pedidos')->distinct()->select('numero_pedido','created_at','total')->where(['email'=>$email,'numero_pedido'=>$numero_pedido])->get();
+        
         $pdf = \PDF::loadView('cliente.pdf_pedido', compact('pedido'),compact('num'));
         return $pdf->download('pdf_pedido.pdf');
     }

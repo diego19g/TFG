@@ -76,25 +76,9 @@
 
     <div style="clear:both"></div>
 
-    <div id="customer">
-
-        <textarea id="customer-title">FOOD GO</textarea>        
-        <table id="meta">
-            <tr>
-                <td class="meta-head">ID Pedido</td>
-                <td>{{$numero->numero_pedido}}</td>
-            </tr>
-            <tr>
-
-                <td class="meta-head">Fecha</td>
-                <td>{{$numero->created_at}}</td>
-            </tr>
-            <tr>
-                <td class="meta-head">Total</td>
-                <td>{{$numero->total}} €</td>
-            </tr>
-
-        </table>       
+    <div style="text-align:center;">
+        <h3>ID Pedido:: {{$numero->numero_pedido}}</h3>
+        <h3>Realizado: {{$numero->created_at}}</h3>        
     </div>
 
     <table id="items" style="text-align:center;">
