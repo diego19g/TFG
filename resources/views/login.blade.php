@@ -7,13 +7,13 @@
         <div class="flat-form">
             <ul class="tabs">
                 <li>
-                    <a href="#login" class="active">Iniciar sesión</a>
+                    <a href="#login">Iniciar sesión</a>
                 </li>
                 <li>
-                    <a href="#register">Registro</a>
+                    <a href="#register" class="active">Registro</a>
                 </li>                
             </ul>
-            <div id="login" class="form-action show">
+            <div id="login" class="form-action hide">
                 <h1>Inicia sesión en FOOD GO!</h1>
                 <p>
                     Es necesario tener una cuenta y acceder a ella para poder realizar pedidos, controlar el progreso del mismo, consultar pedidos anteriores... Si ya la tienes inicia sesión, si no regístrate y disfruta de nuestras ventajas.
@@ -34,7 +34,7 @@
                 </form>
             </div>
             <!--/#login.form-action-->
-            <div id="register" class="form-action hide">
+            <div id="register" class="form-action show">
                 <h1>Registro</h1>
                 <p>
                 Es necesario tener una cuenta y acceder a ella para poder realizar pedidos, controlar el progreso del mismo, consultar pedidos anteriores... Si ya la tienes inicia sesión, si no regístrate y disfruta de nuestras ventajas.
@@ -42,17 +42,37 @@
                 <form method="POST" action="{{ route('registro') }}">
                 @csrf
                     <ul>
-                        <li>
-                            <input type="text" name="nombre" placeholder="Nombre" required/>
+                        <li>                    
+                            <input type="text" name="nombre" placeholder="Nombre"/>
+                            <label>
+                            @if($errors->first('nombre'))
+                                <p>{{$errors->first('nombre')}}</p>
+                            @endif
+                            </label>
                         </li>
                         <li>
-                            <input type="text" name="apellido" placeholder="Apellido" required/>
+                            <input type="text" name="apellido" placeholder="Apellido"/>
+                            <label>
+                            @if($errors->first('apellido'))
+                                <p>{{$errors->first('apellido')}}</p>
+                            @endif
+                            </label>
                         </li>
                         <li>
-                            <input type="text" name="email" placeholder="Email" required/>
+                            <input type="text" name="email" placeholder="Email"/>
+                            <label>
+                            @if($errors->first('email'))
+                                <p>{{$errors->first('email')}}</p>
+                            @endif
+                            </label>
                         </li>
                         <li>
-                            <input type="password" name="password" placeholder="Password" required/>
+                            <input type="password" name="password" placeholder="Password"/>
+                            <label>
+                            @if($errors->first('password'))
+                                <p>{{$errors->first('password')}}</p>
+                            @endif
+                            </label>
                         </li>
                         <li>
                             <input type="submit" name="register" value="register" class="button" />

@@ -16,6 +16,13 @@ class RegisterController extends Controller
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
 
+        $this->validate($request,[
+            'nombre'=>'required|regex:/^[a-zA-Z\s]+$/',
+            'apellido'=>'required|regex:/^[a-zA-Z\s]+$/',
+            'email'=>'required|regex:/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/',
+            'password'=>'required',
+        ]);
+
         $user->save();
 
         return view('login');
