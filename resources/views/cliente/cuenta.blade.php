@@ -16,22 +16,42 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
                     <input type="text" name="nombre" class="form-control" placeholder="{{ $datos->name }}" aria-label="Nombre" aria-describedby="basic-addon1">
+                    <label>
+                        @if($errors->first('nombre'))
+                            <p>{{$errors->first('nombre')}}</p>
+                        @endif
+                    </label>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
                     <input type="text" name="apellido" class="form-control" placeholder="{{ $datos->surname }}" aria-label="Apellido" aria-describedby="basic-addon1">
+                    <label>
+                        @if($errors->first('apellido'))
+                            <p>{{$errors->first('apellido')}}</p>
+                        @endif
+                    </label>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Email</span>
-                    <input type="text" name="email" class="form-control" placeholder="{{ $datos->email }}" aria-label="Email" aria-describedby="basic-addon1" disabled>
+                    <input type="text" name="email" class="form-control" placeholder="{{ $datos->email }}" aria-label="Email" aria-describedby="basic-addon1" disabled> 
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
                     <input type="password" name="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
+                    <label>
+                        @if($errors->first('password'))
+                            <p>{{$errors->first('password')}}</p>
+                        @endif
+                    </label>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Confirmar contraseña</span>
                     <input type="password" name="password2" class="form-control" placeholder="Confirmar contraseña" aria-label="Confirmar contraseña" aria-describedby="basic-addon1">
+                    <label>
+                        @if($errors->first('password2'))
+                            <p>{{$errors->first('password2')}}</p>
+                        @endif
+                    </label>
                 </div>
             </div>
             <input type="submit" name="modificar" value="Actualizar datos" class="btn btn-lg btn-home" />

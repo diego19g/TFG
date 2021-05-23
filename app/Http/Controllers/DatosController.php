@@ -19,7 +19,14 @@ class DatosController extends Controller
         $email = session('email');   
         $user=User::where('email',$email)->get();   
         //$user = DB::table('users')->where(['email'=>$email])->get();
-               
+        
+        $this->validate($request,[
+            'nombre'=>'required|regex:/^[a-zA-Z\s]+$/',
+            'apellido'=>'required|regex:/^[a-zA-Z\s]+$/', 
+            'password'=>'required',
+            'password2'=>'required',
+        ]);
+
             if($request->password == $request->password2){
                 foreach($user as $us){
                     $us->name = $request->nombre;
