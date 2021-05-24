@@ -62,6 +62,7 @@ Route::get('/carta_restaurante', [CartController::class,'CartaRestaurante'])->na
 Route::put('datos_restaurante', [DatosController::class,'DatosRestaurante'])->name('datos_restaurante');
 Route::view('cuenta_restaurante', 'restaurante.cuenta_restaurante')->name('cuenta_restaurante');
 Route::post('añadir_producto', [RestauranteController::class,'AñadirProducto'])->name('añadir_producto');
+Route::delete('eliminar_producto', [RestauranteController::class,'EliminarProducto'])->name('eliminar_producto');
 Route::view('vista_añadir', 'restaurante.añadir_producto')->name('vista_añadir');
 
 
