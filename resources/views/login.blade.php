@@ -3,7 +3,12 @@
 <link href="css/login.css" rel="stylesheet">
   
 @section('content')
-{!! Alert::render() !!}
+@if ($message = Session::get('error'))
+<div style="text-align:center;" class="alert alert-danger alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
 <div class="container">
         <div class="flat-form">
             <ul class="tabs">

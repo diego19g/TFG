@@ -25,8 +25,7 @@ class LoginController extends Controller
                 session(['email' => $email]);
                 return redirect(route('home_cliente'));
             }   else{
-                \Alert::message('Email o contraseña incorrectos', 'danger');
-                return view('login');
+                return redirect(route('login'))->with('error','Contraseña incorrecta');
             }
 
         }else{
@@ -38,11 +37,11 @@ class LoginController extends Controller
                     session(['email' => $email]);
                     return redirect(route('home_restaurante'));
                 }   else{
-                    echo "'Login failed'";
+                    return redirect(route('login'))->with('error','Email o contraseña incorrectos');
                 }
     
             }else{
-                echo "'Login failed'";
+                return redirect(route('login'))->with('error','Email o contraseña incorrectos');
             }
         }
         
