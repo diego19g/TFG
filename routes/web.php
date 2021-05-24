@@ -25,9 +25,12 @@ Route::get('/carta', [CartController::class,'CartaInicio'])->name('carta_inicio'
 Route::view('carta_cliente', 'cliente.carta_cliente')->name('carta_cliente');
 Route::view('pedido_actual', 'cliente.compra_actual')->name('compra');
 
+//rutas login
 Route::post('acceso',[LoginController::class,'ComprobarLogin'])->name('acceso');
 Route::post('registro',[RegisterController::class,'RegistrarUsuario'])->name('registro');
 Route::get('cerrar_sesion', [CartController::class,'CerrarSesion'])->name('cerrar_sesion');
+
+//rutas cliente
 Route::get('home_cliente',[LoginController::class,'CogerNombre'])->name('home_cliente');
 Route::get('cuenta', [DatosController::class,'index'])->name('cuenta');
 Route::put('modificar_datos', [DatosController::class,'ModificarDatos'])->name('modificar_datos');

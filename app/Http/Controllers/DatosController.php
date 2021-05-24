@@ -38,9 +38,9 @@ class DatosController extends Controller
     
                 }                      
             
-                return redirect(route('cuenta'));
+                return redirect(route('cuenta'))->with('success','Datos actualizados correctamente');
             }else{
-               echo "La contraseña no coincide";
+                return redirect(route('cuenta'))->with('error','La contraseña no coincide');
             }                
 
     }
@@ -63,9 +63,9 @@ class DatosController extends Controller
     
                 }                      
             
-                return redirect(route('cuenta_restaurante'));
+                return redirect(route('cuenta_restaurante'))->with('success','Datos actualizados correctamente');
             }else{
-               echo "La contraseña no coincide";
+                return redirect(route('cuenta_restaurante'))->with('error','La contraseña no coincide');
             }                
 
     }

@@ -2,6 +2,17 @@
 
 @section('content')
 <section class="flotante texto_cuenta">
+@if ($message = Session::get('error'))
+<div style="text-align:center;" class="alert alert-danger alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
+@if ($message = Session::get('success'))
+<div style="text-align:center;" class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
     <div>
             <h2>Mis datos</h2>
             <br>
