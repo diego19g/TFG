@@ -7,6 +7,7 @@ use App\Http\Controllers\DatosController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\RestauranteController;
+use App\Http\Controllers\GmapsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,9 @@ Route::put('pedido_confirmado/{numero_pedido}', [RestauranteController::class,'P
 Route::put('enviado/{numero_pedido}', [RestauranteController::class,'Enviado'])->name('enviado');
 Route::put('entregado/{numero_pedido}', [RestauranteController::class,'Entregado'])->name('entregado');
 
+//rutas mapas
+Route::view('contacto', 'contacto')->name('contacto');
+Route::get('gmaps', [GmapsController::class,'index'])->name('gmaps');
 
 
 
