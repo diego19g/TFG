@@ -4,8 +4,9 @@
 <section class="flotante" style="text-align:center;position:absolute;left:40%;">
 <h1 style="text-align:center;">Último pedido</h1>
 <br><hr><br>
-      <div class="table-responsive tabla_pedido">    
-      <h4>ID Pedido: {{$numero->numero_pedido}}</h4>      
+@if($numero!='')
+      <div class="table-responsive tabla_pedido">       
+      <h4>ID Pedido: {{$numero->numero_pedido}}</h4>        
         <table class="table table-striped table-sm fondo_tabla">
           <thead>
             <tr>              
@@ -28,9 +29,10 @@
           </tbody>
         </table>
         <h4>Realizado: {{$numero->created_at}}</h4>
-        <h4>Estado: {{$numero->estado}}</h4>                    
+        <h4>Estado: {{$numero->estado}}</h4>                         
       </div>
       <br><hr><br>
+      @endif         
 </section>
 
 @endsection
