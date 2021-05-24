@@ -5,7 +5,7 @@
 <h1 style="text-align:center;" id="titulo_carta">ENTRANTES</h1> 
 <hr>
 <div style="text-align:center;">
-    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('añadir_producto')}}">Añadir a la carta</a>
+    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('vista_añadir')}}">Añadir a la carta</a>
     <a class="btn btn-lg btn-home enlace_login_home" href="">Eliminar de la carta</a>
 </div>
 <hr>

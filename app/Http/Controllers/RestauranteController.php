@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Pedido;
+use App\Models\Product;
 
 class RestauranteController extends Controller
 {
@@ -79,4 +80,23 @@ class RestauranteController extends Controller
         return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
     
+    public function AñadirProducto(Request $request){
+        $producto=new Product();
+
+        $producto->name=$request->nombre;
+        $producto->price=$request->precio;
+        $producto->category_id=$request->categoria;
+        $producto->image_path=$request->imagen;
+        
+        $this->validate($request,[
+            'nombre'=>'required|regex:/^[a-zA-Z\s]+$/',
+            'precio'=>'required|regex:/^\d*\.?\d*$/',
+            'categoria'=>'required|regex:/^[0-9]$/',
+        ]);
+
+    
+        $producto->save();
+
+        return redirect(route('vista_añadir'))->with('success','Producto añadido a la carta');
+    }
 }

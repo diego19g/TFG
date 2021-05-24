@@ -61,7 +61,9 @@ Route::post('acceder_pedido', [RestauranteController::class,'AccederPedido'])->n
 Route::get('/carta_restaurante', [CartController::class,'CartaRestaurante'])->name('shop_restaurante');
 Route::put('datos_restaurante', [DatosController::class,'DatosRestaurante'])->name('datos_restaurante');
 Route::view('cuenta_restaurante', 'restaurante.cuenta_restaurante')->name('cuenta_restaurante');
-Route::view('añadir_producto', 'restaurante.añadir_producto')->name('añadir_producto');
+Route::post('añadir_producto', [RestauranteController::class,'AñadirProducto'])->name('añadir_producto');
+Route::view('vista_añadir', 'restaurante.añadir_producto')->name('vista_añadir');
+
 
 Route::put('en_cocina/{numero_pedido}', [RestauranteController::class,'EnCocina'])->name('en_cocina');
 Route::put('pedido_confirmado/{numero_pedido}', [RestauranteController::class,'PedidoConfirmado'])->name('pedido_confirmado');
