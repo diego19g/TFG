@@ -3,7 +3,12 @@
 @section('content')
 <section class="flotante shop">
 <h1 style="text-align:center;" id="titulo_carta">ENTRANTES</h1> 
-<br>
+<hr>
+<div style="text-align:center;">
+    <a class="btn btn-lg btn-home enlace_login_home" href="{{ route('añadir_producto')}}">Añadir a la carta</a>
+    <a class="btn btn-lg btn-home enlace_login_home" href="">Eliminar de la carta</a>
+</div>
+<hr>
     <div class="album py-5">
     
         <div class="container">
@@ -19,8 +24,7 @@
         </div>
     <div class="container" style="text-align:center;">
         <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <hr>
+            <div class="col-lg-12">                
                 <div id="entrantes" class="row">
                     @foreach($products as $pro)
                     @if(($pro->category_id)==1)

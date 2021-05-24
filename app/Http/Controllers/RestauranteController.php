@@ -78,4 +78,5 @@ class RestauranteController extends Controller
 
         return view("restaurante.modificar_pedido")->with(['pedido'=>$pedido,'num'=>$num]);
     }
+    
 }
