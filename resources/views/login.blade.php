@@ -9,6 +9,12 @@
 </div>
 @endif
 
+@if ($message = Session::get('success'))
+<div style="text-align:center;" class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
 <div class="container">
         <div class="flat-form">
             <ul class="tabs">
@@ -33,7 +39,7 @@
                             <input type="password" name="password" placeholder="Password" />
                         </li>
                         <li>
-                            <input type="submit" name="login" value="login" class="button" />
+                            <input type="submit" name="login" value="Login" class="button" />
                         </li>
                     </ul>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">        
@@ -81,7 +87,7 @@
                             </label>
                         </li>
                         <li>
-                            <input type="submit" name="register" value="register" class="button" />
+                            <input type="submit" name="register" value="Register" class="button" />
                         </li>
                     </ul>
                 </form>

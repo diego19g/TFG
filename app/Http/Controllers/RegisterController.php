@@ -25,6 +25,6 @@ class RegisterController extends Controller
 
         $user->save();
 
-        return view('login');
+        return redirect(route('login'))->with('success','Usuario registrado correctamente');
     }
 }
