@@ -3,6 +3,7 @@
 <link href="css/login.css" rel="stylesheet">
   
 @section('content')
+{!! Alert::render() !!}
 <div class="container">
         <div class="flat-form">
             <ul class="tabs">

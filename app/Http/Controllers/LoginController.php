@@ -25,7 +25,8 @@ class LoginController extends Controller
                 session(['email' => $email]);
                 return redirect(route('home_cliente'));
             }   else{
-                echo "'Login failed'";
+                \Alert::message('Email o contraseña incorrectos', 'danger');
+                return view('login');
             }
 
         }else{
