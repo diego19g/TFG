@@ -39,7 +39,7 @@ Route::put('modificar_datos', [DatosController::class,'ModificarDatos'])->name('
 
 //rutas del carrito
 Route::get('/carta_cliente', [CartController::class,'shop'])->name('shop');
-Route::get('/cart', [CartController::class,'cart'])->name('cart.index');
+Route::get('http://phplaravel-603684-1954412.cloudwaysapps.com/cart', [CartController::class,'cart'])->name('cart.index');
 Route::post('/add', [CartController::class,'add'])->name('cart.store');
 Route::post('/update', [CartController::class,'update'])->name('cart.update');
 Route::post('/remove', [CartController::class,'remove'])->name('cart.remove');
