@@ -66,7 +66,7 @@
 
     <div id="identity">
 
-        <p id="address">FOOD GO<br><br>Calle Pelota 19<br><br>Valladolid, 47011<br><br>Teléfono: 983 321 456</p>
+        <p id="address">FOOD GO<br><br>Calle Bajada de la Libertad, 15<br><br>Valladolid, 47002<br><br>Teléfono: 983 321 456</p>
 
         <div id="logo">
             <img id="image" src="images/logo.png" alt="logo" width="100px" height="100px"/>
