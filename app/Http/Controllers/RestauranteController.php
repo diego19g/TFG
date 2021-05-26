@@ -82,7 +82,9 @@ class RestauranteController extends Controller
     
     public function AñadirProducto(Request $request){
         $producto=new Product();
+        $id=rand(1,1000);
 
+        $producto->id=$id;
         $producto->name=$request->nombre;
         $producto->price=$request->precio;
         $producto->category_id=$request->categoria;
