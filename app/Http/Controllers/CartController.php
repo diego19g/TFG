@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Pedido;
 use DB;
-use Cart;
 
 class CartController extends Controller
 {
