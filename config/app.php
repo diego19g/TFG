@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         GeneaLabs\LaravelMaps\Providers\Service::class,
+        Darryldecode\Cart\CartServiceProvider::class,
 
     ],
 
