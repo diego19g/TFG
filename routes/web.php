@@ -7,7 +7,6 @@ use App\Http\Controllers\DatosController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\RestauranteController;
-use App\Http\Controllers\GmapsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +62,6 @@ Route::get('/carta_restaurante', [CartController::class,'CartaRestaurante'])->na
 Route::put('datos_restaurante', [DatosController::class,'DatosRestaurante'])->name('datos_restaurante');
 Route::view('cuenta_restaurante', 'restaurante.cuenta_restaurante')->name('cuenta_restaurante');
 Route::post('añadir_producto', [RestauranteController::class,'AñadirProducto'])->name('añadir_producto');
-Route::delete('eliminar_producto', [RestauranteController::class,'EliminarProducto'])->name('eliminar_producto');
 Route::view('vista_añadir', 'restaurante.añadir_producto')->name('vista_añadir');
 
 
@@ -72,9 +70,6 @@ Route::put('pedido_confirmado/{numero_pedido}', [RestauranteController::class,'P
 Route::put('enviado/{numero_pedido}', [RestauranteController::class,'Enviado'])->name('enviado');
 Route::put('entregado/{numero_pedido}', [RestauranteController::class,'Entregado'])->name('entregado');
 
-//rutas mapas
-Route::view('contacto', 'contacto')->name('contacto');
-Route::get('gmaps', [GmapsController::class,'index'])->name('gmaps');
 
 
 
