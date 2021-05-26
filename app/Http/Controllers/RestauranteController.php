@@ -99,15 +99,4 @@ class RestauranteController extends Controller
 
         return redirect(route('vista_añadir'))->with('success','Producto añadido a la carta');
     }
-
-    public function EliminarProducto(Request $request){
-        $id=$request->id;
-
-        $producto = Product::find($id);
-        
-        $producto->delete();
-       
-
-        return redirect(route('shop_restaurante'))->with('success','Producto eliminado de la carta');
-    }
 }
