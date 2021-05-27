@@ -13,6 +13,16 @@
         <strong>{{ $message }}</strong>
 </div>
 @endif
+@if($errors->any())
+<div class="alert alert-danger flotante" style="text-align:center;">
+    <p>No es posible registrarse,</p><p>por favor corrige los siguientes errores:</p>
+    <ul>
+        @foreach($errors->all() as $error)           
+            <li>- {{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
     <div>
             <h2>Mis datos</h2>
             <br>
