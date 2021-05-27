@@ -13,16 +13,7 @@
         <strong>{{ $message }}</strong>
 </div>
 @endif
-@if($errors->any())
-<div class="alert alert-danger flotante" style="text-align:center;">
-    <p>No es posible registrarse,</p><p>por favor corrige los siguientes errores:</p>
-    <ul>
-        @foreach($errors->all() as $error)           
-            <li>- {{$error}}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
+
     <div>
             <h2>Mis datos</h2>
             <br>
@@ -36,21 +27,11 @@
             <div>            
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input type="text" name="nombre" class="form-control" placeholder="{{ $datos->name }}" aria-label="Nombre" aria-describedby="basic-addon1">
-                    <label>
-                        @if($errors->first('nombre'))
-                            <p>{{$errors->first('nombre')}}</p>
-                        @endif
-                    </label>
+                    <input type="text" name="nombre" class="form-control" placeholder="{{ $datos->name }}" aria-label="Nombre" aria-describedby="basic-addon1">             
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
                     <input type="text" name="apellido" class="form-control" placeholder="{{ $datos->surname }}" aria-label="Apellido" aria-describedby="basic-addon1">
-                    <label>
-                        @if($errors->first('apellido'))
-                            <p>{{$errors->first('apellido')}}</p>
-                        @endif
-                    </label>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Email</span>
@@ -59,27 +40,26 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
                     <input type="password" name="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1">
-                    <label>
-                        @if($errors->first('password'))
-                            <p>{{$errors->first('password')}}</p>
-                        @endif
-                    </label>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Confirmar contraseña</span>
                     <input type="password" name="password2" class="form-control" placeholder="Confirmar contraseña" aria-label="Confirmar contraseña" aria-describedby="basic-addon1">
-                    <label>
-                        @if($errors->first('password2'))
-                            <p>{{$errors->first('password2')}}</p>
-                        @endif
-                    </label>
                 </div>
             </div>
             <input type="submit" name="modificar" value="Actualizar datos" class="btn btn-lg btn-home" />
             </form>
     </div>
 </section>
-
+@if($errors->any())
+<div class="alert alert-danger flotante" style="text-align:center;">
+    <p>No es posible actualizar tus datos,</p><p>por favor corrige los siguientes errores:</p>
+    <ul>
+        @foreach($errors->all() as $error)           
+            <li>- {{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 @endsection
 
