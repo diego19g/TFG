@@ -13,8 +13,17 @@
         <strong>{{ $message }}</strong>
 </div>
 @endif
-
-    <div>
+@if($errors->any())
+<div class="alert alert-danger flotante" style="text-align:center;">
+    <p>No es posible actualizar tus datos,</p><p>por favor corrige los siguientes errores:</p>
+    <ul>
+        @foreach($errors->all() as $error)           
+            <li>- {{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+    <div class="flotante">
             <h2>Mis datos</h2>
             <br>
             <p>Para modificar sus datos escriba sobre los siguientes campos y pulse en "Actualizar datos"</p>
@@ -50,16 +59,6 @@
             </form>
     </div>
 </section>
-@if($errors->any())
-<div class="alert alert-danger flotante" style="text-align:center;">
-    <p>No es posible actualizar tus datos,</p><p>por favor corrige los siguientes errores:</p>
-    <ul>
-        @foreach($errors->all() as $error)           
-            <li>- {{$error}}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
 @endsection
 
