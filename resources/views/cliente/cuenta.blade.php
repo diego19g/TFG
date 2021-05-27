@@ -2,9 +2,9 @@
 
 @section('content')
 <section class="flotante texto_cuenta">
-@if ($message = Session::get('error'))
-<div style="text-align:center;" class="alert alert-danger alert-block">
-        <strong>{{ $message }}</strong>
+@if($errors->any())
+<div class="alert alert-danger flotante" style="text-align:center;">
+    <p>No es posible actualizar tus datos,</p><p>por favor corrige los siguientes errores en los campos</p>
 </div>
 @endif
 
