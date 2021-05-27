@@ -15,6 +15,17 @@
 </div>
 @endif
 
+@if($errors->any())
+<div class="alert alert-danger flotante" style="text-align:center;">
+    <p>No es posible registrarse,</p><p>por favor corrige los siguientes errores:</p>
+    <ul>
+        @foreach($errors->all() as $error)           
+            <li>- {{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <div class="container">
         <div class="flat-form">
             <ul class="tabs">
@@ -56,35 +67,15 @@
                     <ul>
                         <li>                    
                             <input type="text" name="nombre" placeholder="Nombre"/>
-                            <label>
-                            @if($errors->first('nombre'))
-                                <p>{{$errors->first('nombre')}}</p>
-                            @endif
-                            </label>
                         </li>
                         <li>
-                            <input type="text" name="apellido" placeholder="Apellido"/>
-                            <label>
-                            @if($errors->first('apellido'))
-                                <p>{{$errors->first('apellido')}}</p>
-                            @endif
-                            </label>
+                            <input type="text" name="apellido" placeholder="Apellido"/>    
                         </li>
                         <li>
-                            <input type="text" name="email" placeholder="Email"/>
-                            <label>
-                            @if($errors->first('email'))
-                                <p>{{$errors->first('email')}}</p>
-                            @endif
-                            </label>
+                            <input type="text" name="email" placeholder="Email"/>         
                         </li>
                         <li>
-                            <input type="password" name="password" placeholder="Password"/>
-                            <label>
-                            @if($errors->first('password'))
-                                <p>{{$errors->first('password')}}</p>
-                            @endif
-                            </label>
+                            <input type="password" name="password" placeholder="Password"/>           
                         </li>
                         <li>
                             <input type="submit" name="register" value="Register" class="button" />
